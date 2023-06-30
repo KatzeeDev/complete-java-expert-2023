@@ -1,10 +1,9 @@
-package com.cursojava.seccion2;
+package seccion2;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class TareaFactura {
-
     public static void main(String[] args) {
         // Datos que pertenecen al Sistema
         String nombreDeLaEmpresa = "Vicho S.A";
@@ -32,7 +31,6 @@ public class TareaFactura {
         // Calculos
         int total = cantidadProducto * precioProducto;
 
-
         System.out.println("              Factura Emitida              ");
         System.out.println(" -------------- Datos Empresa -------------- ");
         System.out.println("Nombre de la Empresa: " + nombreDeLaEmpresa);
@@ -46,10 +44,6 @@ public class TareaFactura {
         System.out.println("Cantidad del Producto: " + cantidadProducto);
         System.out.println("Precio Unitario del Producto: " + precioProducto);
         System.out.println("Total de la Factura: $" + total);
-
-
     }
-
-
 
 }

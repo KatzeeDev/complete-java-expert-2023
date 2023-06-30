@@ -1,4 +1,4 @@
-package com.cursojava.seccion3;
+package seccion3;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,6 +16,30 @@ public class Main {
         - Obtener la extension de un archivo
         - Algunos metodos utiles para convertir un string en un arreglo
         */
+
+
+        String ejemplo = "Esto es un string utilizando lo de siempre";
+        System.out.println("ejemplo = " + ejemplo);
+        String ejemplo2 = new String("Esto es un string utilizando new");
+        System.out.println("ejemplo2 = " + ejemplo2);
+
+
+
+        // Comparar
+        String str1 = "Hola Matias";
+        String str2 = new String("Hola Matias");
+
+
+        // Chequea si son el mismo objeto => False
+        System.out.println("¿Son el mismo objeto?: " + (str1 == str2));
+
+        // Chequea si tienen el mismo valor => True
+        System.out.println("¿Son el mismo objeto?: " + str1.equals(str2));
+
+
+
+
+
 
     }
 }

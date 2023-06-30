@@ -1,4 +1,4 @@
-package com.cursojava.seccion2;
+package seccion2;
 
 // Curso de Andres Guzman
 public class Main {

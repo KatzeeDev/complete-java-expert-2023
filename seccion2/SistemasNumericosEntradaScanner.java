@@ -1,4 +1,4 @@
-package com.cursojava.seccion2;
+package seccion2;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
