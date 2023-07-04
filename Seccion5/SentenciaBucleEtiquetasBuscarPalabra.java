@@ -1,24 +1,36 @@
 package Seccion5;
 
-public class SentenciaBucleEtiquetasBuscarLetra {
+import java.util.Scanner;
+
+public class SentenciaBucleEtiquetasBuscarPalabra {
 
     public static void main(String[] args) {
+        // Programa para buscar cuantas veces hay una palabra en una frase incluyendo si estan dentro de otra
+        Scanner scanner = new Scanner(System.in);
+        String frase;
+        String palabra;
 
-        // Programa para contar los carcteres de una frase.
-        String frase = "Tres tristes tigres tragaban trigo en un trigal";
-        int max = frase.length();
+        System.out.print("Ingrese la frase: ");
+        frase = scanner.nextLine();
+        System.out.print("Ingrese la palabra: ");
+        palabra = scanner.next();
+
+        int maxPalabra = palabra.length();
+        int maxFrase = frase.length() - maxPalabra +1;
+
         int cantidad = 0;
-        char letra = 't';
-        for (int i = 0; i < max; i++) {
-            // Recorremos cada indice del string. Si es igual a la letra t es porque lo encontro
-            // Si es distinto que continue
-            if (frase.charAt(i) != letra) {
-                continue;
-            }
+
+        buscar:
+        for (int i = 0; i < maxFrase; i++) {
+            int k = i;
+            for (int j = 0; j < maxPalabra; j++) {
+            if (frase.charAt(k++) != palabra.charAt(j)) {
+                continue buscar;
+            }}
             cantidad++;
         }
-        System.out.println("Encontrado: " + cantidad + " veces el caracter " + letra + " en la frase");
+        System.out.println("Encontrado: " + cantidad + " veces la palabra " + palabra + " en la frase");
+
 
     }
-
 }

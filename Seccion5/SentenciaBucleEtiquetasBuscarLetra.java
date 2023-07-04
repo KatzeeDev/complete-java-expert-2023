@@ -1,6 +1,6 @@
 package Seccion5;
 
-public class SentenciaBucleEtiquetasBuscar {
+public class SentenciaBucleEtiquetasBuscarLetra {
 
     public static void main(String[] args) {
 
