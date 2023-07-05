@@ -15,8 +15,6 @@ public class TareaBuscarNumeroMenor {
             System.out.println("Ingrese el numero " + (i+1));
             numeros[i] = scanner.nextInt();
         }
-
-        Integer numeroMinimo = Integer.MIN_VALUE;
         int valorMinimo = numeros[0];
 
         for (int i = 0; i < numeros.length; i++) {
