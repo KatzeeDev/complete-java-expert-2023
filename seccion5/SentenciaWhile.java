@@ -1,4 +1,4 @@
-package Seccion5;
+package seccion5;
 
 public class SentenciaWhile {
     public static void main(String[] args) {

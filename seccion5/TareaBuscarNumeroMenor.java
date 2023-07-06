@@ -1,4 +1,4 @@
-package Seccion5;
+package seccion5;
 import java.util.Arrays;
 import java.util.Scanner;
 

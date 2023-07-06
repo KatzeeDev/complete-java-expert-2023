@@ -1,6 +1,4 @@
-package Seccion5;
-
-import java.util.Arrays;
+package seccion5;
 
 public class SentenciaFor {
 

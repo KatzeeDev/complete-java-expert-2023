@@ -1,4 +1,4 @@
-package Seccion5;
+package seccion5;
 
 import javax.swing.*;
 import java.util.HashMap;
