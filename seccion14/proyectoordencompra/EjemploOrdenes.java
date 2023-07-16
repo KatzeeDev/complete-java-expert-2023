@@ -1,4 +1,4 @@
-package seccion14.ProyectoOrdenCompra;
+package seccion14.proyectoordencompra;
 
 public class EjemploOrdenes {
 
