@@ -1,7 +1,7 @@
-package seccion15.matias.app.hogar;
-import seccion15.matias.app.jardin.Perro;
+package seccion15.app.hogar;
+import seccion15.app.jardin.Perro;
 
-import static seccion15.matias.app.hogar.Persona.saludar;
+import static seccion15.app.hogar.Persona.saludar;
 
 public class EjemploHogar {
 

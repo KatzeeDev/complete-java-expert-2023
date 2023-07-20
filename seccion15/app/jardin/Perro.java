@@ -1,6 +1,6 @@
-package seccion15.matias.app.jardin;
+package seccion15.app.jardin;
 
-import seccion15.matias.app.hogar.Persona;
+import seccion15.app.hogar.Persona;
 
 public class Perro {
 

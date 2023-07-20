@@ -1,10 +1,11 @@
 // Se importan todas las clases dentro del paquete "seccion15.matias.app.hogar"
 // El asterisco (*) indica que se importarán todas las clases en ese paquete
-package seccion15.matias.app.jardin;
-import seccion15.matias.app.hogar.*;
+package seccion15.app.jardin;
+import seccion15.app.hogar.Persona;
+import seccion15.app.hogar.*;
 // Demostracion de los import Static. En este caso con el asterisco importamos todos los atributos, miembros metodos etc
-import static seccion15.matias.app.hogar.ColorPelo.*;
-import static seccion15.matias.app.hogar.Persona.*;
+import static seccion15.app.hogar.ColorPelo.*;
+import static seccion15.app.hogar.Persona.*;
 
 
 public class EjemploPaquetes {

@@ -1,4 +1,4 @@
-package seccion15.matias.app.hogar;
+package seccion15.app.hogar;
 
 public class Persona {
     private String nombre;
