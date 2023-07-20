@@ -1,0 +1,37 @@
+@startuml Factura
+
+Cliente <|-- Factura
+Factura o-- ItemFactura
+Producto o-- ItemFactura
+
+
+class Cliente {
+  - nombre : String
+  - nif : String
+}
+
+class Factura {
+	- cliente : Cliente
+	- items : ItemFactura[]
+	- folio : Integer
+	- descripcion : String
+	- fecha : Date
+	+ calcularTotal() : Double
+	+ verDetalle() : String
+}
+
+class Producto {
+	- codigo : Integer
+	- nombre : String
+	- precio : Double
+	+ calcularImporte() : Double
+
+}
+
+class ItemFactura {
+	- producto : Producto
+	- cantidad : Integer
+	
+}
+
+@enduml
