@@ -32,5 +32,10 @@ public class Producto {
         this.precio = precio;
     }
 
-
+    @Override
+    public String toString() {
+        return codigo +
+                "\t" + nombre +
+                "\t" + precio;
+    }
 }
