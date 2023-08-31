@@ -1,4 +1,4 @@
-package seccion36.jbdc_singleton_trx.models;
+package seccion36.jdbc_pool_trx.models;
 
 import java.util.Date;
 
@@ -70,20 +70,16 @@ public class Producto {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(id)
-                .append(" | ")
-                .append(nombre)
-                .append(" | ")
-                .append(precio)
-                .append(" | ")
-                .append(fechaRegistro)
-                .append(" | ");
-        if (categoria != null) {
-            sb.append(categoria.getNombre());
-        }
-        sb.append(" | ")
-                .append(sku);
-        return sb.toString();
+        return id +
+                " | " +
+                nombre +
+                " | " +
+                precio +
+                " | " +
+                fechaRegistro +
+                " | " +
+                categoria.getNombre() +
+                " | " +
+                sku;
     }
 }

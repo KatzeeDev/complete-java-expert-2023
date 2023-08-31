@@ -1,6 +1,6 @@
-package seccion36.jbdc_pool_trx.repository;
+package seccion36.jdbc_pool_trx.repository;
 
-import seccion36.jbdc_pool_trx.models.Categoria;
+import seccion36.jdbc_pool_trx.models.Categoria;
 
 import java.sql.*;
 import java.util.ArrayList;

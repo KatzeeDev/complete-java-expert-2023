@@ -1,4 +1,4 @@
-package seccion36.jbdc_pool_trx.util;
+package seccion36.jdbc_pool_trx.util;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 

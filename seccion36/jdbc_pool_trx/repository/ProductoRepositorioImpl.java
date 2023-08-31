@@ -1,23 +1,32 @@
-package seccion36.jbdc_singleton_trx.repository;
+package seccion36.jdbc_pool_trx.repository;
 
-import seccion36.jbdc_singleton_trx.models.Categoria;
-import seccion36.jbdc_singleton_trx.models.Producto;
-import seccion36.jbdc_singleton_trx.util.ConexionBaseDatos;
+import seccion36.jdbc_pool_trx.models.Categoria;
+import seccion36.jdbc_pool_trx.models.Producto;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class ProductoRepositorioImpl implements Repositorio<Producto> {
 
-    private Connection getConnection() throws SQLException {
-        return ConexionBaseDatos.getInstace();
+    private Connection conn;
+
+    public ProductoRepositorioImpl() {
+    }
+
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
+
+    public ProductoRepositorioImpl(Connection conn) {
+        this.conn = conn;
     }
 
     @Override
     public List<Producto> listar() throws SQLException {
         List<Producto> productos = new ArrayList<>();
-        try (Statement stmt = getConnection().createStatement();
+        try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT p.*, c.nombre as categoria FROM productos as p " +
                      "inner join categorias as c ON (p.categoria_id = c.id)")) {
             while (rs.next()) {
@@ -31,9 +40,8 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     @Override
     public Producto porId(Long id) throws SQLException {
         Producto producto = null;
-        try (PreparedStatement pstmt = getConnection().
-                prepareStatement("SELECT p.*, c.nombre as categoria FROM productos as p " +
-                        "inner join categorias as c ON (p.categoria_id = c.id) WHERE p.id =?")) {
+        try (PreparedStatement pstmt = conn.prepareStatement("SELECT p.*, c.nombre as categoria FROM productos as p " +
+                     "inner join categorias as c ON (p.categoria_id = c.id) WHERE p.id =?")) {
             pstmt.setLong(1, id);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
@@ -45,7 +53,7 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     }
 
     @Override
-    public void guardar(Producto producto) throws SQLException {
+    public Producto guardar(Producto producto) throws SQLException {
         // Él id no se pone debido a que se gestiona solo en la base de datos debido a que es AutoIncremental
         String sql;
         if (producto.getId() != null && producto.getId() > 0) {
@@ -53,7 +61,7 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
         } else {
             sql = "INSERT INTO productos(nombre, precio, categoria_id, sku, fecha_registro) VALUES(?,?,?,?,?)";
         }
-        try (PreparedStatement stmt = getConnection().prepareStatement(sql)) {
+        try (PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, producto.getNombre());
             stmt.setLong(2, producto.getPrecio());
             stmt.setLong(3, producto.getCategoria().getId());
@@ -65,12 +73,20 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
                 stmt.setDate(5, new Date(producto.getFechaRegistro().getTime()));
             }
             stmt.executeUpdate();
+            if (producto.getId() == null) {
+                try (ResultSet rs = stmt.getGeneratedKeys()){
+                    if (rs.next()) {
+                        producto.setId(rs.getLong(1));
+                    }
+                }
+            }
+            return producto;
         }
     }
 
     @Override
     public void eliminar(Long id) throws SQLException {
-        try (PreparedStatement stmt = getConnection().prepareStatement("DELETE FROM productos WHERE id=?")) {
+        try (PreparedStatement stmt = conn.prepareStatement("DELETE FROM productos WHERE id=?")) {
             stmt.setLong(1, id);
             stmt.executeUpdate();
         }

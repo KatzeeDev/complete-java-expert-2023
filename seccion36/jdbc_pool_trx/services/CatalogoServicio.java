@@ -1,11 +1,11 @@
-package seccion36.jbdc_pool_trx.services;
+package seccion36.jdbc_pool_trx.services;
 
-import seccion36.jbdc_pool_trx.models.Categoria;
-import seccion36.jbdc_pool_trx.models.Producto;
-import seccion36.jbdc_pool_trx.repository.CategoriaRepositorioImpl;
-import seccion36.jbdc_pool_trx.repository.ProductoRepositorioImpl;
-import seccion36.jbdc_pool_trx.repository.Repositorio;
-import seccion36.jbdc_pool_trx.util.ConexionBaseDatos;
+import seccion36.jdbc_pool_trx.models.Categoria;
+import seccion36.jdbc_pool_trx.models.Producto;
+import seccion36.jdbc_pool_trx.repository.CategoriaRepositorioImpl;
+import seccion36.jdbc_pool_trx.repository.ProductoRepositorioImpl;
+import seccion36.jdbc_pool_trx.repository.Repositorio;
+import seccion36.jdbc_pool_trx.util.ConexionBaseDatos;
 
 import java.sql.Connection;
 import java.sql.SQLException;

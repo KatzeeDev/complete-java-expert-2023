@@ -1,4 +1,4 @@
-package seccion36.jbdc_singleton_trx.models;
+package seccion36.jdbc_pool_trx.models;
 
 public class Categoria {
     private Long id;

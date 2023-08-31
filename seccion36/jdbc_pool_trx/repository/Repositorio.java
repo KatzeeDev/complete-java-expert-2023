@@ -1,4 +1,4 @@
-package seccion36.jbdc_pool_trx.repository;
+package seccion36.jdbc_pool_trx.repository;
 
 import java.sql.Connection;
 import java.sql.SQLException;

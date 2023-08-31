@@ -1,9 +1,9 @@
-package seccion36.jbdc_pool_trx;
+package seccion36.jdbc_pool_trx;
 
-import seccion36.jbdc_pool_trx.models.Categoria;
-import seccion36.jbdc_pool_trx.models.Producto;
-import seccion36.jbdc_pool_trx.services.CatalogoServicio;
-import seccion36.jbdc_pool_trx.services.Servicio;
+import seccion36.jdbc_pool_trx.models.Categoria;
+import seccion36.jdbc_pool_trx.models.Producto;
+import seccion36.jdbc_pool_trx.services.CatalogoServicio;
+import seccion36.jdbc_pool_trx.services.Servicio;
 
 import java.sql.SQLException;
 import java.util.Date;
